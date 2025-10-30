@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebAR Exemplo - Cubo AR.js</title>
+    <!-- Inclui A-Frame e AR.js -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <!-- Cena AR -->
+    <a-scene
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+    >
+      <!-- Marcador padrão "hiro" -->
+      <a-marker preset="hiro">
+        <!-- Cubo 3D -->
+        <a-box
+          position="0 0.5 0"
+          material="color: #4CC3D9; opacity: 0.8;"
+          rotation="45 45 0"
+        >
+        </a-box>
+
+        <!-- Texto flutuante -->
+        <a-text
+          value="Olá, Yuri!"
+          position="-0.5 1.2 0"
+          color="#FFD700"
+          scale="2 2 2"
+        ></a-text>
+      </a-marker>
+
+      <!-- Câmera -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
